@@ -31,9 +31,8 @@
 
 - (id) childControllerForTag:(NSInteger)tag dictionary:(NSDictionary*)dict
 {
-  return [dict objectForKey:[self stringWithInt:tag]];
+    return [dict objectForKey:[NSString stringWithFormat:@"%d",tag]];
 }
-
 
 // TODO: handle rotation
 

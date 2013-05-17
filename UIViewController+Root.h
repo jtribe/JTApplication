@@ -19,15 +19,14 @@ typedef enum {
  */
 
 @interface UIViewController (Root)
-//
+// access root view controller
 + (UIViewController*) rootViewController;
 - (id) rootViewController;
-+ (UIWindow*) window;
+// manage child controllers using tags
 - (id) childControllerForTag:(NSInteger)tag dictionary:(NSDictionary*)dict;
+// access window
++ (UIWindow*) window;
 // full screen progress spinner
 - (void) showProgress;
 - (void) hideProgress;
-
-- (NSString*) stringWithInt:(NSInteger)value;
-- (NSInteger) intWithString:(NSString*)string;
 @end

@@ -9,7 +9,6 @@
 // Contains all the goodies you need for your app. Add this and make your dev live less repetetive
 
 #import "UIViewController+Root.h"
-#import "UIView+Position.h"
 #import "JTSingleton.h"
 #import "JTLogging.h"
 #import "JTAlert.h"
