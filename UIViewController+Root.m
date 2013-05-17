@@ -7,7 +7,6 @@
 
 #import "UIViewController+Root.h"
 #import "AppDelegate.h" // only works if your App delegate is called AppDelegate (which it really should)
-#import "UIView+Position.h"
 
 @implementation UIViewController (Root)
 
@@ -44,14 +43,17 @@
 {
   UIView *spinnerView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
   spinnerView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.75];
-  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhiteLarge)];
-  [spinner startAnimating ];
-  [spinner centerOnScreen];
-  [spinnerView addSubview:spinner];
-  [spinnerView centerOnScreen];
-  spinnerView.tag = PROGRESS_VIEW_TAG;
-  
-  [[UIViewController window] addSubview:spinnerView];
+  // activity indicator
+  {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhiteLarge)];
+    [spinner startAnimating ];
+    spinner.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2);
+    [spinnerView addSubview:spinner];
+    spinnerView.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2);
+    spinnerView.tag = PROGRESS_VIEW_TAG;
+    
+    [[UIViewController window] addSubview:spinnerView];
+  }
 }
 
 - (void) hideProgress
