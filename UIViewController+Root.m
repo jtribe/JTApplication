@@ -6,27 +6,9 @@
 //
 
 #import "UIViewController+Root.h"
-#import "AppDelegate.h" // only works if your App delegate is called AppDelegate (which it really should)
+#import "UIResponder+AppDelegateAddons.h"
 
 @implementation UIViewController (Root)
-
-+ (UIViewController*) rootViewController
-{
-  AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-  return appDelegate.window.rootViewController;
-}
-
-- (id) rootViewController
-{
-  AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    return appDelegate.window.rootViewController;
-}
-
-+ (UIWindow*) window
-{
-  AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-  return appDelegate.window;
-}
 
 
 - (id) childControllerForTag:(NSInteger)tag dictionary:(NSDictionary*)dict
