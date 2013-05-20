@@ -14,7 +14,7 @@ UIViewController+Root
 
 adds some useful stuff to a controller
 - managing child controllers by tag
-- eaasy access to the window
+- easy access to the window
 - a simple progress spinner
 - easy access to the the apps rootViewController
 
