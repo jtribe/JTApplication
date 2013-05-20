@@ -3,10 +3,16 @@
 /*
  Useful macro to make a class a singleton
  You need to add this method to your class header
- + (YOUR_CLASS) sharedInstance;
+ + (YOUR_CLASS*) sharedInstance;
  
- In the implementation file just add where your @synthezise would be
+ In the implementation file just add
  JTSYNTHESIZE_SINGLETON_FOR_CLASS(YORU_CLASS)
+ 
+ e.g.
+ 
+ @implementation YORU_CLASS
+ JTSYNTHESIZE_SINGLETON_FOR_CLASS(YORU_CLASS)
+ @end
  
  Done - your class is now a singleton and you can access it like this:
  [YOUR_CLASS sharedInstance];
