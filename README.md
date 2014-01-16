@@ -29,3 +29,6 @@ JTApplication
 JTAlert
 -------
 - very simple standard alerts (alerts like "not yet implemented")
+
+
+[by jtribe](http://jtribe.com.au)
